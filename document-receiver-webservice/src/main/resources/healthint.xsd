@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://healthint/integration"
+           targetNamespace="http://healthint/integration" elementFormDefault="qualified">
+
+    <xs:element name="requestMedicalActivity">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="procedure" type="xs:string"/>	
+                <xs:element name="healthplan" type="xs:string"/>
+                <xs:element name="materials" type="tns:materials"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="requestMedicalActivityResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="statusInfo" type="tns:status"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="status">
+        <xs:sequence>
+        	<xs:element name="approvedByHealthPlanRet" type="xs:boolean"/>
+        	<xs:element name="materialsAvailable" type="xs:string"/>
+        	<xs:element name="roomNumber" type="xs:string"/>
+        	<xs:element name="totalExpenses" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="materials">
+  		<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+    
+</xs:schema>

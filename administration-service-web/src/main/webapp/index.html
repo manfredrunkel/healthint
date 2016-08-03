@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Administração</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+		loadDocuments();		
+		window.setInterval(loadDocuments, 10000);
+	});
+	
+	function loadDocuments(){
+		$('#table').html('');
+		var tr = $('<tr>');
+		tr.append( '<td>' + 'Data Rec' + '</td>' );	
+		tr.append( '<td>' + 'Tipo de Documento' + '</td>' );	
+		tr.append( '<td>' +  'Procedimento' + '</td>' );	
+		tr.append( '<td>' +  'Plano de Saúde' + '</td>' );	
+		tr.append( '<td>' +  'Materiais' + '</td>' );	
+		$('#table').append(tr);
+		$.ajax({
+			url : "/api/adm/getAllDocs",
+			crossDomain : true,
+			success : function(result) {
+				for (index in result) {
+					var document = result[index];
+					var documentParsed = JSON.parse(document.content);
+					if(documentParsed.requestMedicalActivity){
+						var tr = $('<tr>');
+						tr.append( '<td>' + new Date(document.receivedDate).toGMTString() + '</td>' );	
+						tr.append( '<td>' + 'Pedido Procedimento Médico' + '</td>' );	
+						tr.append( '<td>' +  documentParsed.requestMedicalActivity.procedure + '</td>' );	
+						tr.append( '<td>' +  documentParsed.requestMedicalActivity.healthplan + '</td>' );	
+						tr.append( '<td>' +  documentParsed.requestMedicalActivity.materials + '</td>' );	
+						$('#table').append(tr);
+					}
+				}
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div id="title">
+		<h2>HealthInt Administration</h2>
+	</div>
+	<table id="table">
+	</table>
+</body>
+</html>

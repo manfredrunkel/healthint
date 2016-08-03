@@ -1,0 +1,23 @@
+server:
+  port: 0
+
+info:
+  component: HealthInt Materials Service
+
+service:
+  defaultMinMs: 5
+  defaultMaxMs: 20
+
+ribbon:
+ serverListRefreshInterval: 1000
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 1
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.int}}
+  client:
+    # Default values comes from org.springframework.cloud.netflix.eurek.EurekaClientConfigBean
+    registryFetchIntervalSeconds: 1
+    instanceInfoReplicationIntervalSeconds: 1
+    initialInstanceInfoReplicationIntervalSeconds: 1
