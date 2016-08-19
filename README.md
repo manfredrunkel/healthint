@@ -8,16 +8,16 @@ Please take note of where each project correlates to Microservice architecture:
 
 
 
-To Run it, please checkout this project and execute:
+To Run it, please checkout this project and execute:<br />
 
-mvn package
+mvn package<br />
 
-On each project:
+On each project:<br />
 
-mvn spring-boot:run
+mvn spring-boot:run<br />
 
-All services will register to Discovery Services and after Proxy executed, it's possible to use following links:
+All services will register to Discovery Services and after Proxy executed, it's possible to use following links:<br />
 
-https://server:port/admweb/admin - WEB UI Interface to follow documents.
-https://server:port/api/sendintegratidocs/ws - to send document through POST request.
-https://server:port/api/adm/getAllDocs - Get all documents integrated in a JSON format.
+https://server:port/admweb/admin - WEB UI Interface to follow documents.<br />
+https://server:port/api/sendintegratidocs/ws - to send document through POST request.<br />
+https://server:port/api/adm/getAllDocs - Get all documents integrated in a JSON format.<br />
