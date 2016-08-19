@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AdministrationService {
 
-	private static String GET_DOCS_QUERY = "SELECT * FROM DOCUMENTS";
-	private static String INSERT_DOCS_QUERY = "INSERT INTO DOCUMENTS (document,receivedDate) values (?,?)";
+	private static final String GET_DOCS_QUERY = "SELECT * FROM DOCUMENTS";
+	private static final String INSERT_DOCS_QUERY = "INSERT INTO DOCUMENTS (document,receivedDate) values (?,?)";
 
 	@RequestMapping(method = RequestMethod.GET, value = "/registerDoc")
 	public String registerDoc(String document) {
@@ -53,5 +53,4 @@ public class AdministrationService {
 
 		return documents;
 	}
-
 }
