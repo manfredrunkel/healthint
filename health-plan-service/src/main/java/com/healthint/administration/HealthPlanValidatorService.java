@@ -17,6 +17,7 @@ public class HealthPlanValidatorService {
 		// FRENECTOMIA
 		if (medicProcedure.equals("04.01.01.008-2")) {
 			accepted = true;
+			logger.info("Accepted!");
 		}
 		return accepted;
 	}
