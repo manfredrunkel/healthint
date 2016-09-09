@@ -16,7 +16,7 @@ public class ExpensesService {
 		logger.info("Calculating expenses for Medic Procedure: " + medicProcedure);
 
 		if (medicProcedure.equals("04.01.01.008-2")) {
-			totalValue = 1232.90;
+			totalValue = 1232.91;
 		} else if (medicProcedure.equals("04.01.01.008-1")) {
 			totalValue = 1400.90;
 		}
