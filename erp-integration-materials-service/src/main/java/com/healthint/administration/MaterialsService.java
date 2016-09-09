@@ -13,6 +13,13 @@ public class MaterialsService {
 
 	final static Logger logger = Logger.getLogger(MaterialsService.class);
 
+	@RequestMapping("/checkMaterialsExistence")
+	public String checkMaterialsExistence(String materials) {
+		// TO-DO
+		return "{quantity:1}";
+	}
+	
+	
 	@RequestMapping("/registerMaterials")
 	public String registerMaterials(String medicProcedure, String components) {
 		// call ERP Integration
