@@ -1,8 +1,11 @@
-# Healthint (Microservices with WSDL/SOAP Integration)
+# Healthint (Micro services with WSDL/SOAP Integration)
 
-Healthint is a project that demonstrates how to use Microservices (using Spring Cloud libraries) while integrating Document with WSDL/SOAP Webservice.
+Healthint is a project that demonstrates how to use Micr oservices (using Spring Cloud libraries) while integrating Document with WSDL/SOAP Webservice.
 
-Please take note of where each project correlates to Microservice architecture:
+Other libraries:
+Netflix Zuul, Eureka, Load Ribbon  
+
+Please take note of where each project correlates to Micro service architecture:
 
 ![alt tag](https://github.com/manfredrunkel/healthint/blob/master/micro.png)
 
